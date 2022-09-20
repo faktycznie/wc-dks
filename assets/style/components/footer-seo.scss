@@ -1,0 +1,43 @@
+.seo {
+  .tab-content {
+    .btn-collapse {
+      display: none;
+    }
+    .collapse:not(.show) {
+      display: block;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .nav-pills {
+      display: none;
+    }
+    .tab-content {
+      .btn-collapse {
+        display: block;
+      }
+      .collapse:not(.show) {
+        display: none;
+      }
+      .active > .btn-collapse:not(.collapsed) + .collapse {
+        display: block;
+      }
+      >.tab-pane {
+        display: block;
+        border-bottom: 1px solid #E2E2E2;
+        &:first-child {
+          border-top: 1px solid #E2E2E2;
+        }
+      }
+      .btn-link {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+      .active > .btn-link {
+        color: $style;
+      }
+      .collapse {
+        padding-bottom: 32px;
+      }
+    }
+  }
+}

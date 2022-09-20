@@ -1,0 +1,148 @@
+.header {
+  background: #fff;
+  position: relative;
+  z-index: 1045;
+  margin: 0 0 40px;
+  .offcanvas-show & {
+    z-index: auto; //needed for offcanvas button
+  }
+}
+
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 64px;
+  padding: 18px 0;
+  > div + div {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -32px;
+      display: block;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 16px;
+      background: #69737A;
+    }
+  }
+}
+
+.nav-bar {
+  position: relative;
+  gap: 64px;
+  &__catalog {
+    position: relative;
+    width: 236px;
+    height: 60px;
+    .btn--catalog {
+      position: absolute;
+      left: 0;
+      top: 0;
+      white-space: nowrap;
+    }
+  }
+  &__mobile {
+    gap: 24px;
+  }
+  @include media-breakpoint-down(xl) {
+    gap: 24px;
+    .offcanvas-btn {
+      order: 2;
+    }
+  }
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  &__link {
+    &:hover,
+    &:focus {
+      svg path {
+        fill: $style;
+      }
+    }
+  }
+}
+
+.language {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  .active {
+    color: $style;
+  }
+}
+
+.search-form {
+  .form-group {
+    position: relative;
+  }
+  &__input {
+    padding-right: 50px;
+    padding-bottom: 20px;
+  }
+  &__btn {
+    background: none;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 100%;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.dropdowns {
+  position: relative;
+  z-index: 1045;
+  .offcanvas-show & {
+    z-index: auto; //needed for offcanvas button
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #fff;
+  &--active {
+    opacity: 1;
+    max-height: 500px;
+  }
+  &__container {
+    max-width: 1246px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__column {
+    padding: 42px 36px;
+    background: #F5F5F5;
+  }
+  &__content {
+    flex-grow: 1;
+    padding: 42px 30px;
+  }
+}

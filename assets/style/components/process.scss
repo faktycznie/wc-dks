@@ -1,0 +1,51 @@
+.process {
+  @include media-breakpoint-down(md) {
+    &__h2 {
+      font-size: 32px;
+      line-height: 40px;
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+.card--process {
+  background-color: #F5F5F5;
+  @include media-breakpoint-down(md) {
+    min-height: 280px;
+  }
+  .card-body {
+    padding: 40px 40px 20px;
+    @include media-breakpoint-down(md) {
+      padding: 40px 30px 20px;
+    }
+  }
+  a {
+    color: inherit;
+  }
+  .card-step {
+    color: $style2;
+    position: relative;
+    margin-right: 28px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 60px;
+      height: 2px;
+      margin-top: -1px;
+      background: $style;
+      pointer-events: none;
+      margin-left: 25px;
+    }
+  }
+  .row > *:last-child & {
+    .card-step {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

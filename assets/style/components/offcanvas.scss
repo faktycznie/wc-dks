@@ -1,0 +1,97 @@
+.offcanvas {
+  min-width: 334px;
+  &-btn {
+    position: absolute;
+    top: 50%;
+    left: -84px;
+    transform: translateY(-50%);
+    z-index: 1046;
+    @media(max-width: 1820px) {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+    }
+  }
+  &-body {
+    padding: 11.458vw 8.333vw 60px;
+    @include media-breakpoint-down(xl) {
+      padding: 85px 32px 60px;
+      .nav-menu + .nav-menu {
+        border-top: 1px solid #F5F5F5;
+        padding-top: 48px;
+        margin-top: 48px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: none;
+  width: 24px;
+  height: 24px;
+  &:hover {
+    opacity: 0.7;
+    background: none;
+  }
+  &__inner {
+    display: block;
+    top: 50%;
+    margin-top: -1px;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+    }
+    &:before {
+      top: -7px;
+      transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+    }
+    &:after {
+      bottom: -7px;
+      transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+
+  &__inner,
+  &__inner:before,
+  &__inner:after {
+    width: 24px;
+    height: 2px;
+    background-color: #242424;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.075s;
+  }
+  &--active {
+    .hamburger__inner {
+      transform: rotate(45deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      &:before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+      }
+      &:after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}

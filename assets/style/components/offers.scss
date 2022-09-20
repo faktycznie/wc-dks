@@ -1,0 +1,72 @@
+.offers {
+  @include media-breakpoint-down(sm) {
+    .nav-tabs {
+      #offers-all-tab {
+        display: none;
+      }
+    }
+    .tab-content {
+      #offers-all {
+        display: none;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__h2 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+  .card--presentation {
+    min-height: 400px;
+    .card-body {
+      margin-bottom: 64px; //title height
+    }
+  }
+}
+
+.card--presentation {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: block;
+    width: 9px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  .card-body {
+    background-color: $style;
+  }
+  .card-title {
+    font-family: "Titillium Web";
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    line-height: 32px;
+    text-transform: uppercase;
+    span {
+      display: block;
+    }
+  }
+  &:hover {
+    .card-body {
+      background-color: $style2;
+    }
+    .arrow-long {
+      width: 84px;
+    }
+  }
+}
+
+.card--offers {
+  .card-img {
+    img {
+      min-height: 400px;
+      object-fit: cover;
+    }
+  }
+}

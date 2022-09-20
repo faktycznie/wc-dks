@@ -1,0 +1,175 @@
+.page-about {
+  position: relative;
+  overflow: hidden;
+  &__container {
+    max-width: 1324px;
+    position: relative;
+    z-index: 2;
+  }
+  .bg--left {
+    position: absolute;
+    top: 0; 
+    left: -138px;
+    pointer-events: none;
+  }
+  .bg--right {
+    position: absolute;
+    top: 40px;
+    right: -75px;
+    pointer-events: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    .bg--right {
+      top: 0;
+    }
+  }
+
+
+  &__content {
+    max-width: 386px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+  &__features {
+    max-width: 788px;
+  }
+  .card--about {
+    border: 1px solid #E2E2E2;
+    border-radius: 0 0 40px 0;
+    .card-body {
+      padding: 45px 50px;
+      @include media-breakpoint-down(md) {
+        padding: 45px 30px;
+      }
+    }
+    .card-icon {
+      min-width: 90px;
+    }
+    .card-text {
+      padding-left: 0;
+    }
+  }
+}
+
+.timeline {
+  &__desc {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  &__items {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 100px;
+      bottom: 0;
+      width: 1px;
+      display: block;
+      background: currentColor;
+      @include media-breakpoint-up(md) {
+        top: 50px;
+        left: 50%;
+      }
+    }
+  }
+
+  &-item {
+    display: flex;
+    
+    > div:first-child {
+      text-align: right;
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+    > div:last-child {
+      text-align: left;
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+
+    &__year {
+      color: $style;
+      font-family: "Titillium Web";
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 112px;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        right: -8px;
+        width: 16px;
+        height: 10px;
+        background: #fff;
+        border: 1px solid #69737a;
+        z-index: 2;
+        border-radius: 0 4px 4px 0;
+      }
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    &__content {
+      padding-top: 0;
+      padding-bottom: 32px;
+    }
+
+    @include media-breakpoint-up(md) {
+      justify-content: center;
+      > div:first-child {
+        padding-left: 70px;
+        padding-right: 70px;
+        width: 50%;
+      }
+      > div:last-child {
+        padding-left: 70px;
+        padding-right: 70px;
+        width: 50%;
+      }
+      .timeline-item__year {
+        &:before {
+          top: 48px;
+          left: auto;
+          right: -20px;
+          width: 35px;
+          height: 24px;
+          border-radius: 0 12px 12px 0;
+        }
+      }
+      .timeline-item__content {
+        padding-top: 45px;
+        padding-bottom: 45px;
+      }
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        > div:first-child {
+          text-align: left;
+          padding-left: 70px;
+          padding-right: 70px;
+        }
+        > div:last-child {
+          text-align: right;
+          padding-left: 70px;
+          padding-right: 70px;
+        }
+        .timeline-item__year {
+          &:before {
+            left: -20px;
+            right: auto;
+            border-radius: 12px 0 0 12px;
+          }
+        }
+        .timeline-item__content {
+          padding-top: 45px;
+          padding-bottom: 45px;
+        }
+      }
+    }
+  }
+}

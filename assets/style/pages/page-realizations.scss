@@ -1,0 +1,87 @@
+.sidebar--realizations {
+  margin: 0 0 40px;
+  .widget {
+    &.widget--r_cat,
+    &.widget--r_industry {
+      .widget__title {
+        color: $style2;
+        @include media-breakpoint-down(md) {
+          font-size: 18px;
+          line-height: 45px;
+          text-transform: uppercase;
+          padding: 0 20px;
+          margin: 5px 10px 20px;
+          border: 1px solid transparent;
+          color: #fff;
+          background: $style;
+          &.collapsed {
+            border-color: #E2E2E2;
+            color: $style2;
+            background: #fff;
+          }
+        }
+      }
+      @include media-breakpoint-down(md) {
+        margin: 0;
+        .wp-block-categories-list {
+          display: flex;
+          flex-wrap: wrap;
+          > li {
+            flex: 0 0 50%;
+          }
+        }
+      }
+      li {
+        > a {
+          position: relative;
+          padding-left: 45px;
+          &:before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border: 1px solid $style;
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            border-radius: 2px;
+          }
+        }
+        &.active {
+          > a {
+            &:before {
+              background: $style;
+            }
+            &:after {
+              content: '';
+              width: 10px;
+              height: 10px;
+              display: block;
+              position: absolute;
+              top: 5px;
+              left: 13px;
+              transform-origin: bottom left;
+              clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.card--realization {
+  .card-body {
+    padding-left: 0 !important; //we need to override bootstraps importants
+    padding-right: 0 !important;
+  }
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    .card-body {
+      padding-left: 60px !important;
+      padding-right: 60px !important;
+    }
+  }
+
+}

@@ -1,0 +1,40 @@
+.error404 {
+  .main {
+    position: relative;
+    overflow: hidden;
+    &__container {
+      position: relative;
+      z-index: 2;
+    }
+    .bg--left {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -235px;
+      pointer-events: none;
+    }
+    .bg--right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      pointer-events: none;
+    }
+    .error {
+      min-height: 60vh;
+      &__title {
+        font-family: "Titillium Web";
+        font-weight: 700;
+        font-size: 160px;
+        line-height: 112px;
+      }
+      &__description {
+        max-width: 430px;
+        @include media-breakpoint-down(md) {
+          font-size: 18px;
+        }
+      }
+      
+    }
+  }
+}

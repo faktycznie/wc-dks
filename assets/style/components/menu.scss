@@ -1,0 +1,110 @@
+.nav-menu {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 48px;
+  }
+  .menu-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    > a {
+      display: flex;
+      align-items: center;
+      min-height: 60px;
+      color: #242424;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 19px;
+      text-transform: uppercase;
+      &:hover,
+      &:focus {
+        color: $style;
+      }
+    }
+    &.menu-item-has-children {
+      padding-right: 16px;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -4px;
+        display: block;
+        width: 11px;
+        height: 8px;
+        background: url('/app/themes/foreto/assets/img/icons/arrow-down.svg') no-repeat;
+        margin-left: 8px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      &.menu-item-dropdown-active {
+        border-color: $style;
+        &:after {
+          transform: rotate(180deg);
+        }
+        > a {
+          color: $style;
+        }
+      }
+    }
+  }
+  .nav-bar & {
+    padding-right: 50px;
+  }
+
+  .offcanvas & {
+    &__list {
+      gap: 0;
+      margin-left: -32px;
+      margin-right: -32px;
+    }
+    .menu-item {
+      width: 100%;
+      align-items: flex-start;
+      flex-direction: column;
+      border: none;
+      &:after {
+        top: 27px;
+        right: 47px;
+      }
+      > a {
+        min-height: 50px;
+        padding: 0 32px;
+      }
+    }
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: none;
+      background: #F5F5F5;
+      width: 100%;
+      > li {
+        > a {
+          text-transform: none;
+          padding: 0 48px;
+        }
+      }
+      .sub-menu {
+        background: #E2E2E2;
+        > li {
+          > a {
+            text-transform: none;
+            padding: 0 64px;
+          }
+        }
+      }
+    }
+    .menu-item-dropdown-active {
+      > .sub-menu {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+$style: #F47920 !default;
+$secondary: #69737A !default;
+$style2: #242424 !default;
+
+$theme-colors: (
+    "primary": $style,
+    "secondary": $secondary,
+);
+
+$btn-font-family: 'Open Sans', sans-serif;
+$btn-font-weight: 700;
+$btn-line-height: 19px;
+
+$btn-padding-y: 20px;
+$btn-padding-x: 40px;
+$btn-font-size: 14px;
+$btn-border-radius: 0 0 16px 0;
+
+
+$input-padding-y: 21px;
+$input-padding-x: 20px;
+$input-font-family: 'Open Sans', sans-serif;
+$input-font-size: 16px;
+$input-font-weight: 400;
+$input-line-height: 1.25;
+$input-color: $style2;
+$input-bg: #F5F5F5;
+$input-border-color: #E2E2E2;
+$input-placeholder-color: $input-color;
+
+$offcanvas-horizontal-width: 40vw;

@@ -1,0 +1,58 @@
+.faq {
+  .btn-link,
+  .accordion-button,
+  .accordion-body {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .btn-link {
+    color: inherit;
+    &[aria-expanded="true"] {
+      font-weight: 700;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .tab-content {
+      margin: 0 -20px;
+      >.tab-pane {
+        display: block;
+      }
+    }
+    .btn-link {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+      color: inherit;
+      background: #F5F5F5;
+      position: relative;
+      &:after {
+        font-size: 120%;
+        margin-right: 20px;
+        margin-left: auto;
+      }
+      &[aria-expanded="true"] {
+        &:after {
+          content: '-';
+        }
+      }
+      &[aria-expanded="false"] {
+        &:after {
+          content: '+';
+        }
+      }
+    }
+    .accordion-button {
+      padding-left: 20px;
+      padding-right: 20px;
+      &:after {
+        margin-right: 20px;
+      }
+    }
+    .accordion-button,
+    .accordion-body {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

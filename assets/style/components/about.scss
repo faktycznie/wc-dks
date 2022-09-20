@@ -1,0 +1,121 @@
+.about {
+  position: relative;
+  overflow: hidden;
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+  .bg--left {
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+    pointer-events: none;
+  }
+  .bg--right {
+    position: absolute;
+    bottom: 250px; 
+    right: 0;
+    pointer-events: none;
+  }
+  @include media-breakpoint-down(md) {
+    .bg--left {
+      position: absolute;
+      top: 10px;
+      bottom: auto;
+      left: 0;
+    }
+    .bg--right {
+      position: absolute;
+      top: 30px;
+      bottom: auto;
+      right: -10px;
+    }
+    &__h2 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+  &__subtitle {
+    font-family: "Titillium Web";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 40px;
+    color: $style2;
+  }
+
+  &__counters {
+    max-width: 1400px;
+  }
+
+  .row {
+    &--first {
+      .col-xl:last-child {
+        .card-body {
+          padding-right: 25px;
+        }
+      }
+      @include media-breakpoint-up(xxl) {
+        padding-right: 264px;
+      }
+    }
+    &--second {
+      @include media-breakpoint-up(xxl) {
+        padding-left: 130px;
+      }
+    }
+  }
+  
+}
+
+.card--grey {
+  background-color: #F5F5F5;
+  padding: 60px 80px 60px 120px;
+  .card-text {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: $style2;
+  }
+  @include media-breakpoint-down(lg) {
+    padding: 30px;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 0;
+    background: none;
+    .card-text {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.card--about {
+  border: none;
+  background: none;
+  border-radius: 0;
+  .card-body {
+    padding: 45px 50px;
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
+  }
+  .card-text {
+    padding-left: 65px;
+  }
+  .card-icon {
+    min-width: 65px;
+    flex-shrink: 0;
+  }
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  &__number {
+    font-family: "Titillium Web";
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 112px;
+    color: $style;
+  }
+}

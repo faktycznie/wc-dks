@@ -1,0 +1,175 @@
+.slider {
+  background-image: url('/app/themes/foreto/assets/img/header-triangle.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  .header + .dropdowns + & {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-down(lg) { 
+    background: none;
+    &__container {
+      padding: 0;
+    }
+  }
+  &__inner {
+    gap: 150px;
+    align-items: center;
+    @include media-breakpoint-down(lg) { 
+      gap: 0;
+      flex-direction: column;
+    }
+  }
+  &__photo {
+    flex-shrink: 1;
+    max-width: 100%;
+    min-width: 0;
+    .swiper-wrapper {
+      padding: 60px 0;
+      @include media-breakpoint-down(lg) { 
+        padding: 20px 0;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      padding-left: 20px;
+      padding-right: 20px;
+      background-image: url('/app/themes/foreto/assets/img/header-triangle.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  &__side {
+    padding: 60px 0;
+    
+    @include media-breakpoint-down(lg) { 
+      padding: 30px 20px 0;
+    }
+  }
+  &__pagination {
+    position: static;
+  }
+  &__description {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    transition: all 0.3s ease;
+    &--active {
+      opacity: 1;
+      max-height: 500px;
+      visibility: visible;
+    }
+  }
+  &__maintitle {
+    margin: 0 0 52px;
+    span {
+      @extend .color;
+    }
+    @include media-breakpoint-down(lg) { 
+      font-size: 48px;
+      line-height: 50px;
+    }
+  }
+  &__pagination.swiper-pagination-horizontal {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 24px;
+    .swiper-pagination-bullet {
+      margin: 0;
+      border-radius: 0;
+      width: 50px;
+      height: 2px;
+      background: #E2E2E2;
+    }
+    .swiper-pagination-bullet-active {
+      background: $style;
+    }
+  }
+  &__title {
+    margin: 0 0 24px;
+    @include media-breakpoint-down(lg) { 
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  &__content {
+    margin: 0 0 32px;
+  }
+}
+
+//markers
+.slider__photo .wpim {
+  max-width: 1056px;
+  .wpim-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .wpim-marker__icon {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-indent: -999px;
+    font-size: 0;
+    border-width: 1px;
+    border-color: #242424;
+    background: #fff;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      background: #242424;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    @media(max-width: 1660px) {
+      display: none;
+    }
+  }
+
+  .wpim-marker__icon:hover,
+  .focus .wpim-marker__icon {
+    border-color: $style;
+    &:after {
+      background: $style;
+    }
+  }
+
+  .wpim-content-header {
+    h4 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      text-transform: uppercase;
+      margin: 0 0 35px;
+    }
+  }
+  .wpim-content-summary,
+  .wpim-content-thumbnail {
+    display: none;
+  }
+  .wpim-marker .post,
+  .wpim-marker .page,
+  .wpim-marker .product {
+    text-align: left;
+  }
+  .wpim-marker .wpim-content-morelink {
+    text-transform: lowercase;
+    font-size: 12px;
+    line-height: 17px;
+    color: $style;
+    margin: 0;
+  }
+  .wpim-marker .wpim-infowindow {
+    min-width: 256px;
+  }
+  .wpim-marker .wpim-infowindow__inner {
+    padding: 10px 20px 24px;
+  }
+  .wpim-marker .wpim-infowindow__close {
+    background: none;
+  }
+}
